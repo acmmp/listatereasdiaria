@@ -29,7 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["./src/js/js.js"],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -92,10 +92,13 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/js/js.js"]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0470fbd8-0850-4c4c-b288-e8c652959ac2"
   }
 }

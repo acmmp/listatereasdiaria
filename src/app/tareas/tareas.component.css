@@ -1,0 +1,170 @@
+body {
+    padding-top: 50px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/006/429/746/non_2x/abstract-background-gradient-abstract-modern-background-for-mobile-apps-free-vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.task-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.task-list {
+    margin-top: 20px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+#calendar {
+    margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+    .task-container {
+        padding: 10px;
+    }
+
+    .task-container .form-row {
+        flex-wrap: wrap;
+    }
+
+    .task-container .form-row .col {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #calendar-container {
+        max-width: 100%;
+    }
+
+    #calendar {
+        height: 200px;
+    }
+}
+
+ /* IMPRIMIR */
+
+
+.print-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.print-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+.print-button i {
+    font-size: 24px;
+}
+
+
+ /* Estilo para el fantasma */
+ .assistant {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #fff;
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+    z-index: 1000;
+}
+
+
+
+
+ /* FANTASMA */
+.assistant {
+    margin-left: 20px; /* Ajusta el valor según sea necesario */
+}
+
+.assistant img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.assistant p {
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+  /* Estilo para el mensaje final */
+  .footer-message {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f8f9fa;
+    color: #6c757d;
+    padding: 10px 20px;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-message img {
+    width: 20px; /* Ajusta el tamaño de la imagen del logo de Angular según sea necesario */
+    height: auto;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.task-checkbox {
+    margin-right: 10px;
+}
+.task-completed {
+    text-decoration: line-through;
+    color: #888;
+}
