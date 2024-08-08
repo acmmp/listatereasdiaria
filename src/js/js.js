@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     loadTasks();
     loadCalendar();
 });
@@ -45,25 +45,11 @@ function deleteTask(button) {
 }
 
 function confirmDelete(button) {
-    Swal.fire({
-        title: '¿Estás seguro?',
-        text: "¡Esta acción no se puede deshacer!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Sí, eliminar',
-        cancelButtonText: 'Cancelar'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            deleteTask(button); // Elimina la tarea después de la confirmación
-            Swal.fire(
-                'Eliminado!',
-                'La tarea ha sido eliminada.',
-                'success'
-            );
-        }
-    });
+    const confirmed = confirm('¿Estás seguro de que deseas eliminar esta tarea? Esta acción no se puede deshacer.');
+    if (confirmed) {
+        deleteTask(button); // Llama a deleteTask después de la confirmación
+        alert('La tarea ha sido eliminada.');
+    }
 }
 
 function toggleTask(checkbox) {
