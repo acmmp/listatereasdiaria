@@ -86,7 +86,20 @@ body {
 
 
  /* Estilo para el fantasma */
- .assistant {
+ /* Animación para la aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación para el desvanecimiento */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Estilo para el fantasma */
+.assistant {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -97,16 +110,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 2s ease-in-out, fadeOut 2s ease-in-out 4s; /* Aparece en 2s, luego desaparece en 1s después de 4s */
+    animation-fill-mode: forwards; /* Mantiene el estilo final de la animación */
     z-index: 1000;
-}
-
-
-
-
- /* FANTASMA */
-.assistant {
-    margin-left: 20px; /* Ajusta el valor según sea necesario */
 }
 
 .assistant img {
@@ -119,10 +125,9 @@ body {
     margin: 0;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+
+
+
 
 
   /* Estilo para el mensaje final */
